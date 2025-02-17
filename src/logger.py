@@ -9,10 +9,13 @@ LOGS_PATH = os.path.join(os.getcwd(), 'logs', LOG_FILE)
 # will create files even if file exists
 os.makedirs(LOGS_PATH, exist_ok=True)
 
-LOG_FILE_PATH = os.path.join(LOGS_PATH)
+LOG_FILE_PATH = os.path.join(LOGS_PATH, LOG_FILE)
 
 logging.basicConfig(
-    filename=LOGS_PATH,
+    filename=LOG_FILE_PATH,
     format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO
 )
+
+# if __name__ == "__main__":
+#     logging.info("Logging has started")
